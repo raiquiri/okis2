@@ -23,7 +23,7 @@ public class TestSort {
     }
 
     @Test (groups = {"sort", "positive"}, dataProvider = "arrayInt")
-    void testQuickSort(int[] array, int[] expectedResult) {
+    void testQuickSortInt(int[] array, int[] expectedResult) {
         // Arange - создание окружения
         int[] actualResult;
         // Act - действие
@@ -34,7 +34,7 @@ public class TestSort {
     }
 
     @Test (groups = {"sort", "positive"}, dataProvider = "arrayDouble")
-    void testQuickSort(double[] array, double[] expectedResult) {
+    void testQuickSortDouble(double[] array, double[] expectedResult) {
         // Arange - создание окружения
         double[] actualResult;
         // Act - действие
@@ -45,7 +45,7 @@ public class TestSort {
     }
 
     @Test (groups = {"sort", "positive"}, dataProvider = "arrayInt")
-    void testCombSort(int[] array, int[] expectedResult) {
+    void testCombSortInt(int[] array, int[] expectedResult) {
         // Arange - создание окружения
         int[] actualResult;
         // Act - действие
@@ -56,7 +56,7 @@ public class TestSort {
     }
 
     @Test (groups = {"sort", "positive"}, dataProvider = "arrayDouble")
-    void testCombSort(double[] array, double[] expectedResult) {
+    void testCombSortDouble(double[] array, double[] expectedResult) {
         // Arange - создание окружения
         double[] actualResult;
         // Act - действие
