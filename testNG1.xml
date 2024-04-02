@@ -1,14 +1,14 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 
-<suite name="All sort tests" verbose="1">
-    <test name="Sort tests">
+<suite name="Matrix tests" verbose="1">
+    <test name="Matrix tests">
         <groups>
             <run>
                 <include name="sort"/>
             </run>
         </groups>
         <classes>
-            <class name="org.example.TestSort"/>
+            <class name="org.example.TestMatrix"/>
         </classes>
     </test>
 </suite>

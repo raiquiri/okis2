@@ -8,7 +8,7 @@ import static org.example.Sort.quickSort;
 
 public class TestSearch {
     @Test(groups = {"search", "positive"})
-    void testBinSearchInt() {
+    void testBinSearchInt() throws Exception {
         // Arange - создание окружения
         int[] array = new int[] {1,23,4,5,67,7,8};
         int target = 4;
@@ -22,7 +22,7 @@ public class TestSearch {
     }
 
     @Test(groups = {"search", "positive"})
-    void testBinSearchDouble() {
+    void testBinSearchDouble() throws Exception{
         // Arange - создание окружения
         double[] array = new double[] {1.43,23.13,4.4,5.14,67.67,7.76,8.1};
         double target = 4.4;
@@ -33,5 +33,16 @@ public class TestSearch {
         actualResult = binSearch(array, target);
         // Assert
         Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test(groups = {"search", "negative"}, expectedExceptions = {Search.NotFoundException.class})
+    void testBinSearchException() throws Exception {
+        // Arange - создание окружения
+        int[] array = new int[] {1,23,5,67,7,8};
+        int target = 4;
+        int actualResult;
+        // Act - действие
+        quickSort(array, 0, array.length - 1);
+        actualResult = binSearch(array, target);
     }
 }

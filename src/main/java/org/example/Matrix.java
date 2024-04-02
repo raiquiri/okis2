@@ -1,7 +1,13 @@
 package org.example;
 
 public class Matrix {
-    public static double determinant(int array[][]){
+    public static double determinant(int array[][]) throws Exception {
+        for (int i = 0; i < array.length; i++) {
+            if (array.length != array[i].length) {
+                throw new MatrixLenghtException("Ошибка размерности");
+            }
+        }
+
         double res;
 
         if (array.length == 1) { // матрица 1х1
@@ -36,7 +42,12 @@ public class Matrix {
         }
         return m;
     }
-    public static double determinant(double array[][]){
+    public static double determinant(double array[][]) throws Exception{
+        for (int i = 0; i < array.length; i++) {
+            if (array.length != array[i].length) {
+                throw new MatrixLenghtException("Ошибка размерности");
+            }
+        }
         double res;
 
         if (array.length == 1) { // матрица 1х1
@@ -72,5 +83,10 @@ public class Matrix {
             }
         }
         return subArray;
+    }
+    public static class MatrixLenghtException extends Exception {
+        public MatrixLenghtException(String massege){
+            super(massege);
+        }
     }
 }

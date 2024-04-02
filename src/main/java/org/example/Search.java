@@ -1,7 +1,7 @@
 package org.example;
 
 public class Search {
-    public static int binSearch (int[] array, int value) {
+    public static int binSearch (int[] array, int value) throws NotFoundException {
         int start = 0;
         int end = array.length - 1;
 
@@ -18,9 +18,9 @@ public class Search {
                 }
             }
         }
-        return -1;
+        throw new NotFoundException("Число не найдено");
     }
-    public static int binSearch (double[] array, double value) {
+    public static int binSearch (double[] array, double value)throws NotFoundException {
         int start = 0;
         int end = array.length - 1;
 
@@ -37,6 +37,11 @@ public class Search {
                 }
             }
         }
-        return -1;
+        throw new NotFoundException("Число не найдено");
+    }
+    public static class NotFoundException extends Exception {
+        public NotFoundException(String massege){
+            super(massege);
+        }
     }
 }

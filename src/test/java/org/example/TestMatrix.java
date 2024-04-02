@@ -8,7 +8,7 @@ import static org.example.Matrix.*;
 
 public class TestMatrix {
     @Test(groups = {"matrix", "positive"})
-    void testDeterminantInt() {
+    void testDeterminantInt() throws Exception {
         // Arange - создание окружения
         int[][] array = new int[][] {{1, 3, 4},
                                      {0, 2, 1},
@@ -22,7 +22,7 @@ public class TestMatrix {
     }
 
     @Test(groups = {"matrix", "positive"})
-    void testDeterminantDouble() {
+    void testDeterminantDouble() throws Exception{
         // Arange - создание окружения
         double[][] array = new double[][] {{1.5, 3.2, 1.1},
                                            {0, 6.6, 4.5},
@@ -34,5 +34,15 @@ public class TestMatrix {
         actualResult = determinant(array);
         // Assert
         Assert.assertEquals(actualResult, expectedResult, DELTA);
+    }
+    @Test(groups = {"matrix", "negative"}, expectedExceptions = {Matrix.MatrixLenghtException.class})
+    void testDeterminantException() throws Exception{
+        int[][] array = new int[][] {{1, 3, 4},
+                                     {0, 2, 1, 2},
+                                     {1, 5}};
+        double expectedResult = -12;
+        double actualResult;
+        // Act - действие
+        actualResult = determinant(array);
     }
 }
